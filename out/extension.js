@@ -29,6 +29,7 @@ const view_provider_1 = require("./view-provider");
 function activate(context) {
     const viewProvider = new view_provider_1.HoonAssistViewProvider(context.extensionUri);
     const hoonAssist = new hoon_assist_1.default(viewProvider);
+    viewProvider.show();
     context.subscriptions.push(vscode.window.registerWebviewViewProvider(view_provider_1.HoonAssistViewProvider.viewType, viewProvider));
     context.subscriptions.push(vscode.commands.registerCommand('hoon-assist.activate', () => {
         viewProvider.show();

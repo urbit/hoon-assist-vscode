@@ -6,6 +6,8 @@ export function activate(context: vscode.ExtensionContext) {
 	const viewProvider = new HoonAssistViewProvider(context.extensionUri);
 	const hoonAssist = new HoonAssist(viewProvider);
 
+	viewProvider.show();
+
 	context.subscriptions.push(
 		vscode.window.registerWebviewViewProvider(HoonAssistViewProvider.viewType, viewProvider));
 

@@ -38,12 +38,12 @@ class HoonAssistViewProvider {
     }
     show() {
         if (this._view) {
-            this._view.show?.(true);
+            this._view.show();
         }
     }
     updateContents(html) {
         if (this._view) {
-            this._view.show?.(true); // `show` is not implemented in 1.49 but is for 1.50 insiders
+            this._view.show(true);
             this._view.webview.postMessage({
                 type: 'updateContents',
                 data: html
@@ -57,7 +57,7 @@ class HoonAssistViewProvider {
     }
     _getHtmlForWebview(webview) {
         // Get the local path to main script run in the webview, then convert it to a uri we can use in the webview.
-        const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'src', 'lib', 'hoon-assist-view.js'));
+        const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, 'public', 'hoon-assist-view.js'));
         // Use a nonce to only allow a specific script to be run.
         const nonce = getNonce();
         return `<!DOCTYPE html>
