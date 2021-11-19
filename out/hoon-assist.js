@@ -31,7 +31,7 @@ class HoonAssist {
             return undefined;
         }
         const selection = selections[0];
-        let wordRange = editor.document.getWordRangeAtPosition(selection.active, /[^\s]+/);
+        let wordRange = editor.document.getWordRangeAtPosition(selection.active, /[^\s\(\)\[\]]+/);
         if (!selection.isEmpty) {
             wordRange = selection.with();
         }

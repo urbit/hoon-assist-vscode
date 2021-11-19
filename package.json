@@ -2,7 +2,7 @@
   "name": "hoon-assist",
   "displayName": "Hoon Assist",
   "description": "A package that displays documentation for Hoon runes and standard library functions",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "github:urbit/hoon-assist-vscode",
   "publisher": "nocsyx-lassul",
   "engines": {
